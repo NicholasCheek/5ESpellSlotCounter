@@ -1,3 +1,26 @@
+#!/usr/bin/env python
+"""D20 Spell Slot Counter keeps track of spell slots for casters."""
+
+# counter.py
+# D20 Spell Slot Counter v 1.0.0
+# Nicholas Cheek
+
+# Copyright (C) 2020  Nicholas Cheek.
+#
+# This program is free software: you can redistibute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# Imports
 import tkinter as tk
 from tkinter import ttk
 
@@ -17,7 +40,8 @@ level_label.grid(column=0, row=1)
 
 level_combo = ttk.Combobox(
     window,
-    values=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    # List 1-20
+    values=list(range(1, 21)),
 )
 level_combo.grid(column=1, row=1)
 level_combo.current(19)
@@ -28,7 +52,9 @@ def clicked():
     current_level = level_combo.get()
     spell_window = tk.Toplevel(window)
     spell_window.geometry("500x500")
-    top_label = tk.Label(spell_window, text=f"{current_class} level {current_level}")
+    top_label = tk.Label(
+        spell_window, text=f"{current_class} level {current_level}"
+    )
     top_label.grid(column=0, row=0)
 
     max_slots = []
@@ -228,7 +254,9 @@ def clicked():
     )
     ninth_btn.grid(column=1, row=10)
 
-    long_rest_btn = tk.Button(spell_window, text="Long Rest", command=long_rest)
+    long_rest_btn = tk.Button(
+        spell_window, text="Long Rest", command=long_rest
+    )
     long_rest_btn.grid(column=0, row=11)
 
 
