@@ -1,7 +1,7 @@
 # D20 Spell Slot Counter
 
-D20 Spell Slot Counter is a python script that can kept keep track of
-remaining spell slots for casters.
+D20 Spell Slot Counter is a python script that keeps track of remaining spell
+slots for casters.
 
 ## Setup
 
